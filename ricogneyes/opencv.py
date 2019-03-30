@@ -3,8 +3,16 @@ cap = cv2.VideoCapture(0)
 cap.set(3,640) #width=640
 cap.set(4,480) #height=480
 
-if cap.isOpened():
-    _,frame = cap.read()
-    cap.release() #releasing camera immediately after capturing picture
-    if _ and frame is not None:
-        cv2.imwrite('img.jpg', frame)
+while True:
+    b, img =cap.read()
+    if b:
+        cv2.imshow("Window",img)
+        cv2.waitKey(1)
+    else:
+        break
+    key = cv2.waitKey(1)&0xFF
+    if key == ord('q'):
+        cv2.destroyAllWindows()
+        break
+cv2.destroyAllWindows()
+cap.release()
