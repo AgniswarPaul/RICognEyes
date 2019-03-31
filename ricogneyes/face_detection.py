@@ -9,7 +9,7 @@ if cap.isOpened():
     if _ and frame is not None:
         cv2.imwrite('img.jpg', frame)
         cv2.destroyAllWindows()
-        break
+
   
 cap.release()
         
