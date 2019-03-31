@@ -1,2 +1,2 @@
-# RICognEyes
-Real Time Image Capturing Cognitive Eyes for Visually Impaired people
+# website
+This repository is for all the documentation and code for the Gravol Sports website
