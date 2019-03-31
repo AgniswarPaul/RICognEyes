@@ -10,7 +10,7 @@ ap.add_argument("-p", "--preprocess", type=str, default="thresh", help="type of 
 args = vars(ap.parse_args())
 
 # load the example image and convert it to grayscale
-image = cv2.imread(args["image"])
+image = cv2.imread(args["image.png"])
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 cv2.imshow("Image", gray)
