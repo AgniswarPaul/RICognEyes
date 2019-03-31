@@ -10,7 +10,7 @@ for y in range(img.size[1]):
             pix[x, y] = (0, 0, 0, 255)
         else:
             pix[x, y] = (255, 255, 255, 255)
-img.save('temp.jpg')
+            
 text = pytesseract.image_to_string(Image.open('image.png'))
 
 print(text)
