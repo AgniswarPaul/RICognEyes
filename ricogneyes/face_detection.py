@@ -1,12 +1,14 @@
+import numpy as np
 import cv2
-cap = cv2.VideoCapture(0)
-cap.set(3,640) #width=640
-cap.set(4,480) #height=480
-print("Video Input")
-while True:
-    b, img =cap.read()
-    print("Reading input")
-    if b:
-        print("Output")
-        cv2.imshow("Window",img)
-        cv2.waitKey(1)
+
+cap = cv2.VideoCapture(0)  
+ret,frame = cap.read() 
+
+while(True):
+    cv2.imshow('img1',frame) 
+    if cv2.waitKey(1) & 0xFF == ord('y'):  
+        cv2.imwrite('image.jpg',frame)
+        cv2.destroyAllWindows()
+        break
+
+cap.release()
