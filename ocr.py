@@ -12,5 +12,7 @@ for y in range(img.size[1]):
             pix[x, y] = (255, 255, 255, 255)
             
 text = pytesseract.image_to_string(Image.open('image.png'))
-
+file = open("ocr.txt", "w") 
+file.write(text) 
+file.close()
 print(text)
