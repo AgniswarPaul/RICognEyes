@@ -1,15 +1,26 @@
-from google_speech import Speech
+# Import the required module for text 
+# to speech conversion 
+from gtts import gTTS 
 
-# say "Hello World"
-text = "Hello World"
-lang = "en"
-speech = Speech(text, lang)
-speech.play()
+# This module is imported so that we can 
+# play the converted audio 
+import os 
 
-# you can also apply audio effects while playing (using SoX)
-# see http://sox.sourceforge.net/sox.html#EFFECTS for full effect documentation
-sox_effects = ("speed", "1.5")
-speech.play(sox_effects)
+# The text that you want to convert to audio 
+mytext = 'Welcome to geeksforgeeks!'
 
-# save the speech to an MP3 file (no effect is applied)
-speech.save("output.mp3")
+# Language in which you want to convert 
+language = 'en'
+
+# Passing the text and language to the engine, 
+# here we have marked slow=False. Which tells 
+# the module that the converted audio should 
+# have a high speed 
+myobj = gTTS(text=mytext, lang=language, slow=False) 
+
+# Saving the converted audio in a mp3 file named 
+# welcome 
+myobj.save("welcome.mp3") 
+
+# Playing the converted file 
+os.system("mpg321 welcome.mp3") 
